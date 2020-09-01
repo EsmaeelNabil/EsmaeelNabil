@@ -13,8 +13,12 @@
 - ⚡   Fun fact: I love night walks and music
 
 
-[![Esmaeel's github stats](https://github-readme-stats-amber-one.vercel.app/api?username=esmaeelnabil)](https://www.linkedin.com/in/esmaeel-nabil-1813649b/)
-[![Top Langs](https://github-readme-stats-amber-one.vercel.app/api/top-langs/?username=esmaeelnabil&layout=compact)](https://www.linkedin.com/in/esmaeel-nabil-1813649b/)
+<a href="https://www.linkedin.com/in/esmaeel-nabil-1813649b/">
+  <img align="center" src="https://github-readme-stats-amber-one.vercel.app/api?username=esmaeelnabil&show_icons=true" />
+</a>
+<a href="https://www.linkedin.com/in/esmaeel-nabil-1813649b/">
+  <img align="center" src="https://github-readme-stats-amber-one.vercel.app/api/top-langs/?username=esmaeelnabil&layout=compact" />
+</a>
 
 
 
