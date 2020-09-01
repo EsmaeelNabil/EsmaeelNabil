@@ -14,6 +14,7 @@
 
 
 [![Esmaeel's github stats](https://github-readme-stats-amber-one.vercel.app/api?username=esmaeelnabil)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats-amber-one.vercel.app/api/top-langs/?username=esmaeelnabil&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
 
 
