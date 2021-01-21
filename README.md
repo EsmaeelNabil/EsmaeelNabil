@@ -5,11 +5,11 @@
 
 ## And I'm a Software Developer! - [![](https://komarev.com/ghpvc/?username=EsmaeelNabil&label=Views&color=brightgreen&style=plastic)](https://github.com/EsmaeelNabil)
 
-- 🔭  I’m currently working as Andorid Developer @[Ibtikar Technologies](https://github.com/Ibtikartechnologies)
+- 🔭  I’m currently working as a Senior Andorid Developer @[Ibtikar Technologies](https://github.com/Ibtikartechnologies)
 - 💬  Ask me about (Android, Kotlin, Java, Flutter, Dart, Python)
 - 🌱  I’m currently learning everything 🤣
 - 👯  I’m looking to collaborate with other content creators
-- 🥅  2020 Goals: Contribute more to Open Source projects
+- 🥅  2021 Goals: Contribute more to Open Source projects
 - ⚡   Fun fact: I love night walks and music
 
 
