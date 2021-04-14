@@ -7,7 +7,7 @@
 - 🔭  I’m currently working as a Senior Andorid Developer @[Ibtikar Technologies](https://github.com/Ibtikartechnologies)
 - 💬  Ask me about (Android, Kotlin, Java, Flutter, Dart, Python)
 - 🌱  I’m currently learning everything 🤣
-- 👯  I’m looking to collaborate with other content creators
+- 👯  I’m looking to collaborate with other developers.
 - 🥅  2021 Goals: Contribute more to Open Source projects
 - ⚡   Fun fact: I love night walks and music
 
