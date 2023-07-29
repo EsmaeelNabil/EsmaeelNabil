@@ -4,12 +4,12 @@
 
 ## And I'm a Software Developer! - [![](https://komarev.com/ghpvc/?username=EsmaeelNabil&label=Views&color=brightgreen&style=plastic)](https://github.com/EsmaeelNabil)
 
-- 🔭  I’m currently working as a Senior Andorid Developer @[Zenjob](https://github.com/zenjob)
-- 💬  Ask me about (Android, Kotlin, Java, Flutter, Dart, Python)
-- 🌱  I’m currently learning everything 🤣
+- 🔭  I’m a Software Egineer @[Zenjob](https://github.com/zenjob)
+- 💬  Ask me about (Android, Kotlin, Java, Flutter, Dart, Python, Security)
+- 🌱  I’m currently aiming to learning everything i can.
 - 👯  I’m looking to collaborate with other developers.
-- 🥅  2022 Goals: Contribute more to Open Source projects
-- ⚡   Fun fact: I love night walks and music
+- 🥅  2023 Goals: Contribute more to Open Source projects
+- ⚡   Fun fact: I love night walks and music.
 
 
 <a href="https://www.linkedin.com/in/esmaeel-nabil-1813649b/">
