@@ -1,138 +1,609 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
-    <!-- Gradient Definitions -->
+    <!-- Enhanced Definition Section -->
     <defs>
+        <!-- Background Gradient with Wave Effect -->
         <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#f0f9ff;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#e0f2fe;stop-opacity:1" />
+            <stop offset="0%" style="stop-color:#f0f9ff;stop-opacity:1">
+                <animate attributeName="stop-color"
+                         values="#f0f9ff;#e0f2fe;#dbeafe;#f0f9ff"
+                         dur="15s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="stop-opacity"
+                         values="1;0.8;1"
+                         dur="10s"
+                         repeatCount="indefinite"/>
+            </stop>
+            <stop offset="50%" style="stop-color:#e5e7eb;stop-opacity:1">
+                <animate attributeName="stop-color"
+                         values="#e5e7eb;#dbeafe;#e5e7eb"
+                         dur="15s"
+                         repeatCount="indefinite"/>
+            </stop>
+            <stop offset="100%" style="stop-color:#e0f2fe;stop-opacity:1">
+                <animate attributeName="stop-color"
+                         values="#e0f2fe;#f0f9ff;#e0f2fe"
+                         dur="15s"
+                         repeatCount="indefinite"/>
+            </stop>
         </linearGradient>
 
-        <linearGradient id="highlightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+        <!-- Complex Shimmer Effect -->
+        <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgba(255,255,255,0)">
+                <animate attributeName="offset" values="-2;2" dur="6s" repeatCount="indefinite"/>
+            </stop>
+            <stop offset="10%" style="stop-color:rgba(255,255,255,0.5)">
+                <animate attributeName="offset" values="-1.8;2.2" dur="6s" repeatCount="indefinite"/>
+            </stop>
+            <stop offset="20%" style="stop-color:rgba(255,255,255,0)">
+                <animate attributeName="offset" values="-1.6;2.4" dur="6s" repeatCount="indefinite"/>
+            </stop>
         </linearGradient>
 
-        <radialGradient id="circleGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-            <stop offset="0%" style="stop-color:#818cf8;stop-opacity:0.3" />
-            <stop offset="100%" style="stop-color:#818cf8;stop-opacity:0.1" />
+        <!-- Animated Radial Gradient -->
+        <radialGradient id="pulseGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#818cf8;stop-opacity:0.4">
+                <animate attributeName="stop-opacity"
+                         values="0.4;0.8;0.4"
+                         dur="4s"
+                         repeatCount="indefinite"/>
+            </stop>
+            <stop offset="100%" style="stop-color:#818cf8;stop-opacity:0.1">
+                <animate attributeName="stop-opacity"
+                         values="0.1;0.4;0.1"
+                         dur="4s"
+                         repeatCount="indefinite"/>
+            </stop>
         </radialGradient>
 
-        <!-- Tech icon background with gradient -->
-        <radialGradient id="techIconGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-            <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:0.9" />
-            <stop offset="100%" style="stop-color:#4338ca;stop-opacity:0.7" />
-        </radialGradient>
+        <!-- Tech Icon Pulse Wave -->
+        <circle id="pulseRing" r="1" fill="none" stroke="white" stroke-width="1">
+            <animate attributeName="r"
+                     values="0;40"
+                     dur="3s"
+                     repeatCount="indefinite"/>
+            <animate attributeName="stroke-opacity"
+                     values="1;0"
+                     dur="3s"
+                     repeatCount="indefinite"/>
+        </circle>
 
-        <!-- New gradients for sections -->
-        <linearGradient id="sectionGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.95" />
-            <stop offset="100%" style="stop-color:#f8fafc;stop-opacity:0.95" />
-        </linearGradient>
+        <!-- Particle Pattern -->
+        <pattern id="particlePattern" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+            <circle cx="25" cy="25" r="1" fill="#4f46e5" opacity="0.3">
+                <animate attributeName="opacity"
+                         values="0.3;0.7;0.3"
+                         dur="3s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="r"
+                         values="1;2;1"
+                         dur="3s"
+                         repeatCount="indefinite"/>
+            </circle>
+        </pattern>
     </defs>
 
-    <!-- Background with decoration -->
+    <!-- Animated Background with Particles -->
     <rect width="1200" height="600" fill="url(#bgGrad)"/>
-    <circle cx="100" cy="100" r="200" fill="url(#circleGrad)" opacity="0.5"/>
-    <circle cx="1100" cy="500" r="200" fill="url(#circleGrad)" opacity="0.5"/>
+    <rect width="1200" height="600" fill="url(#particlePattern)" opacity="0.5">
+        <animateTransform attributeName="transform"
+                          type="translate"
+                          values="0,0;50,50;0,0"
+                          dur="20s"
+                          repeatCount="indefinite"/>
+    </rect>
 
-    <!-- Header text with gradient background -->
-    <rect x="60" y="40" width="600" height="70" rx="15" fill="url(#sectionGrad)" stroke="#e2e8f0" stroke-width="1"/>
-    <text x="80" y="85" font-family="Arial" font-size="42" fill="#1e293b" font-weight="bold">Hi 👋, I'm Esmaeel</text>
-    <text x="80" y="140" font-family="Arial" font-size="26" fill="#3b82f6">Software Engineer @Thermondo</text>
+    <!-- Animated Background Circles -->
+    <g>
+        <animateTransform attributeName="transform"
+                          type="rotate"
+                          values="0 100 100;360 100 100"
+                          dur="90s"
+                          repeatCount="indefinite"/>
+        <circle cx="100" cy="100" r="200" fill="url(#pulseGrad)">
+            <animate attributeName="r"
+                     values="190;210;190"
+                     dur="15s"
+                     repeatCount="indefinite"/>
+        </circle>
+    </g>
+    <g>
+        <animateTransform attributeName="transform"
+                          type="rotate"
+                          values="360 1100 500;0 1100 500"
+                          dur="90s"
+                          repeatCount="indefinite"/>
+        <circle cx="1100" cy="500" r="200" fill="url(#pulseGrad)">
+            <animate attributeName="r"
+                     values="190;210;190"
+                     dur="15s"
+                     repeatCount="indefinite"/>
+        </circle>
+    </g>
 
-    <!-- About section with styled background -->
-    <rect x="60" y="170" width="500" height="100" rx="15" fill="url(#sectionGrad)" stroke="#e2e8f0" stroke-width="1"/>
-    <text x="80" y="200" font-family="Arial" font-size="18" fill="#475569">"Aiming to learn everything I can 🎯"</text>
-    <text x="80" y="230" font-family="Arial" font-size="16" fill="#475569">• 2024 Goal: Increase Open Source contributions</text>
-    <text x="80" y="255" font-family="Arial" font-size="16" fill="#475569">• Always open for collaboration</text>
+    <!-- Main Content Sections -->
+    <!-- Header Section with Wave Animation -->
+    <g>
+        <animateTransform attributeName="transform"
+                          type="translate"
+                          values="0,0;0,-10;0,0"
+                          dur="8s"
+                          repeatCount="indefinite"/>
+        <rect x="60" y="40" width="600" height="70" rx="15" fill="#ffffff" opacity="0.9" stroke="#e2e8f0">
+            <animate attributeName="opacity"
+                     values="0.8;0.95;0.8"
+                     dur="8s"
+                     repeatCount="indefinite"/>
+        </rect>
+        <text x="80" y="85" font-family="Arial" font-size="42" fill="#1e293b" font-weight="bold">
+            Hi 👋, I'm Esmaeel
+            <animate attributeName="fill-opacity"
+                     values="0.8;1;0.8"
+                     dur="8s"
+                     repeatCount="indefinite"/>
+        </text>
+    </g>
 
-    <!-- Tech stack section with larger circles -->
-    <text x="80" y="320" font-family="Arial" font-size="24" fill="#1e293b" font-weight="bold">Tech Stack</text>
+    <!-- Role Title with Complex Shimmer -->
+    <g>
+        <text x="80" y="140" font-family="Arial" font-size="26" fill="#3b82f6">
+            Software Engineer @Thermondo
+            <animate attributeName="fill-opacity"
+                     values="0.8;1;0.8"
+                     dur="6s"
+                     repeatCount="indefinite"/>
+        </text>
+        <rect x="80" y="120" width="400" height="30" fill="url(#shimmer)" opacity="0.5"/>
+    </g>
 
-    <!-- Tech icons with larger circles and gradients -->
+    <!-- About Section with Wave Motion -->
+    <g>
+        <animateTransform attributeName="transform"
+                          type="translate"
+                          values="0,0;5,0;0,0"
+                          dur="10s"
+                          repeatCount="indefinite"/>
+        <rect x="60" y="170" width="500" height="100" rx="15" fill="#ffffff" opacity="0.9" stroke="#e2e8f0">
+            <animate attributeName="opacity"
+                     values="0.85;0.95;0.85"
+                     dur="7s"
+                     repeatCount="indefinite"/>
+        </rect>
+        <text x="80" y="200" font-family="Arial" font-size="18" fill="#475569">
+            "Aiming to learn everything I can 🎯"
+            <animate attributeName="fill-opacity"
+                     values="0.7;1;0.7"
+                     dur="7s"
+                     repeatCount="indefinite"/>
+        </text>
+        <text x="80" y="230" font-family="Arial" font-size="16" fill="#475569">
+            • 2024 Goal: Increase Open Source contributions
+            <animate attributeName="fill-opacity"
+                     values="0.7;1;0.7"
+                     dur="7s"
+                     begin="0.5s"
+                     repeatCount="indefinite"/>
+        </text>
+        <text x="80" y="255" font-family="Arial" font-size="16" fill="#475569">
+            • Always open for collaboration
+            <animate attributeName="fill-opacity"
+                     values="0.7;1;0.7"
+                     dur="7s"
+                     begin="1s"
+                     repeatCount="indefinite"/>
+        </text>
+    </g>
+
+    <!-- Tech Stack Section -->
+    <g>
+        <text x="80" y="320" font-family="Arial" font-size="24" fill="#1e293b" font-weight="bold">
+            Tech Stack
+            <animate attributeName="fill-opacity"
+                     values="0.8;1;0.8"
+                     dur="5s"
+                     repeatCount="indefinite"/>
+        </text>
+    </g>
+
+    <!-- Tech Stack Icons with Complex Animations -->
+    <!-- Kotlin -->
     <a href="https://kotlinlang.org/" target="_blank">
-        <circle cx="120" cy="380" r="30" fill="#7C3AED">
-            <animate attributeName="opacity" dur="2s" values="0.8;1;0.8" repeatCount="indefinite"/>
-        </circle>
-        <text x="120" y="385" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Kotlin</text>
+        <g>
+            <use href="#pulseRing" x="120" y="380">
+                <animate attributeName="opacity"
+                         values="0;1;0"
+                         dur="3s"
+                         begin="0s"
+                         repeatCount="indefinite"/>
+            </use>
+            <circle cx="120" cy="380" r="30" fill="#7C3AED">
+                <animate attributeName="r"
+                         values="28;32;28"
+                         dur="4s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="fill-opacity"
+                         values="0.8;1;0.8"
+                         dur="4s"
+                         repeatCount="indefinite"/>
+            </circle>
+            <text x="120" y="385" font-family="Arial" font-size="14" fill="white" text-anchor="middle">
+                Kotlin
+                <animate attributeName="font-size"
+                         values="13;15;13"
+                         dur="4s"
+                         repeatCount="indefinite"/>
+            </text>
+        </g>
     </a>
 
+    <!-- Java -->
     <a href="https://www.java.com/" target="_blank">
-        <circle cx="200" cy="380" r="30" fill="#EA580C">
-            <animate attributeName="opacity" dur="2s" values="0.8;1;0.8" repeatCount="indefinite" begin="0.2s"/>
-        </circle>
-        <text x="200" y="385" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Java</text>
+        <g>
+            <use href="#pulseRing" x="200" y="380">
+                <animate attributeName="opacity"
+                         values="0;1;0"
+                         dur="3s"
+                         begin="0.5s"
+                         repeatCount="indefinite"/>
+            </use>
+            <circle cx="200" cy="380" r="30" fill="#EA580C">
+                <animate attributeName="r"
+                         values="28;32;28"
+                         dur="4s"
+                         begin="0.5s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="fill-opacity"
+                         values="0.8;1;0.8"
+                         dur="4s"
+                         repeatCount="indefinite"/>
+            </circle>
+            <text x="200" y="385" font-family="Arial" font-size="14" fill="white" text-anchor="middle">
+                Java
+                <animate attributeName="font-size"
+                         values="13;15;13"
+                         dur="4s"
+                         begin="0.5s"
+                         repeatCount="indefinite"/>
+            </text>
+        </g>
     </a>
 
+    <!-- JavaScript -->
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-        <circle cx="280" cy="380" r="30" fill="#CA8A04">
-            <animate attributeName="opacity" dur="2s" values="0.8;1;0.8" repeatCount="indefinite" begin="0.4s"/>
-        </circle>
-        <text x="280" y="385" font-family="Arial" font-size="14" fill="white" text-anchor="middle">JS</text>
+        <g>
+            <use href="#pulseRing" x="280" y="380">
+                <animate attributeName="opacity"
+                         values="0;1;0"
+                         dur="3s"
+                         begin="1s"
+                         repeatCount="indefinite"/>
+            </use>
+            <circle cx="280" cy="380" r="30" fill="#CA8A04">
+                <animate attributeName="r"
+                         values="28;32;28"
+                         dur="4s"
+                         begin="1s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="fill-opacity"
+                         values="0.8;1;0.8"
+                         dur="4s"
+                         repeatCount="indefinite"/>
+            </circle>
+            <text x="280" y="385" font-family="Arial" font-size="14" fill="white" text-anchor="middle">
+                JS
+                <animate attributeName="font-size"
+                         values="13;15;13"
+                         dur="4s"
+                         begin="1s"
+                         repeatCount="indefinite"/>
+            </text>
+        </g>
     </a>
 
+    <!-- TypeScript -->
     <a href="https://www.typescriptlang.org/" target="_blank">
-        <circle cx="360" cy="380" r="30" fill="#2563EB">
-            <animate attributeName="opacity" dur="2s" values="0.8;1;0.8" repeatCount="indefinite" begin="0.6s"/>
-        </circle>
-        <text x="360" y="385" font-family="Arial" font-size="14" fill="white" text-anchor="middle">TS</text>
+        <g>
+            <use href="#pulseRing" x="360" y="380">
+                <animate attributeName="opacity"
+                         values="0;1;0"
+                         dur="3s"
+                         begin="1.5s"
+                         repeatCount="indefinite"/>
+            </use>
+            <circle cx="360" cy="380" r="30" fill="#2563EB">
+                <animate attributeName="r"
+                         values="28;32;28"
+                         dur="4s"
+                         begin="1.5s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="fill-opacity"
+                         values="0.8;1;0.8"
+                         dur="4s"
+                         repeatCount="indefinite"/>
+            </circle>
+            <text x="360" y="385" font-family="Arial" font-size="14" fill="white" text-anchor="middle">
+                TS
+                <animate attributeName="font-size"
+                         values="13;15;13"
+                         dur="4s"
+                         begin="1.5s"
+                         repeatCount="indefinite"/>
+            </text>
+        </g>
     </a>
 
+    <!-- Rust -->
     <a href="https://www.rust-lang.org/" target="_blank">
-        <circle cx="120" cy="460" r="30" fill="#B91C1C">
-            <animate attributeName="opacity" dur="2s" values="0.8;1;0.8" repeatCount="indefinite" begin="0.8s"/>
-        </circle>
-        <text x="120" y="465" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Rust</text>
+        <g>
+            <use href="#pulseRing" x="120" y="460">
+                <animate attributeName="opacity"
+                         values="0;1;0"
+                         dur="3s"
+                         begin="2s"
+                         repeatCount="indefinite"/>
+            </use>
+            <circle cx="120" cy="460" r="30" fill="#B91C1C">
+                <animate attributeName="r"
+                         values="28;32;28"
+                         dur="4s"
+                         begin="2s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="fill-opacity"
+                         values="0.8;1;0.8"
+                         dur="4s"
+                         repeatCount="indefinite"/>
+            </circle>
+            <text x="120" y="465" font-family="Arial" font-size="14" fill="white" text-anchor="middle">
+                Rust
+                <animate attributeName="font-size"
+                         values="13;15;13"
+                         dur="4s"
+                         begin="2s"
+                         repeatCount="indefinite"/>
+            </text>
+        </g>
     </a>
 
+    <!-- Python -->
     <a href="https://www.python.org/" target="_blank">
-        <circle cx="200" cy="460" r="30" fill="#059669">
-            <animate attributeName="opacity" dur="2s" values="0.8;1;0.8" repeatCount="indefinite" begin="1s"/>
-        </circle>
-        <text x="200" y="465" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Python</text>
+        <g>
+            <use href="#pulseRing" x="200" y="460">
+                <animate attributeName="opacity"
+                         values="0;1;0"
+                         dur="3s"
+                         begin="2.5s"
+                         repeatCount="indefinite"/>
+            </use>
+            <circle cx="200" cy="460" r="30" fill="#059669">
+                <animate attributeName="r"
+                         values="28;32;28"
+                         dur="4s"
+                         begin="2.5s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="fill-opacity"
+                         values="0.8;1;0.8"
+                         dur="4s"
+                         repeatCount="indefinite"/>
+            </circle>
+            <text x="200" y="465" font-family="Arial" font-size="14" fill="white" text-anchor="middle">
+                Python
+                <animate attributeName="font-size"
+                         values="13;15;13"
+                         dur="4s"
+                         begin="2.5s"
+                         repeatCount="indefinite"/>
+            </text>
+        </g>
     </a>
 
+    <!-- Bash -->
     <a href="https://www.gnu.org/software/bash/" target="_blank">
-        <circle cx="280" cy="460" r="30" fill="#475569">
-            <animate attributeName="opacity" dur="2s" values="0.8;1;0.8" repeatCount="indefinite" begin="1.2s"/>
-        </circle>
-        <text x="280" y="465" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Bash</text>
+        <g>
+            <use href="#pulseRing" x="280" y="460">
+                <animate attributeName="opacity"
+                         values="0;1;0"
+                         dur="3s"
+                         begin="3s"
+                         repeatCount="indefinite"/>
+            </use>
+            <circle cx="280" cy="460" r="30" fill="#475569">
+                <animate attributeName="r"
+                         values="28;32;28"
+                         dur="4s"
+                         begin="3s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="fill-opacity"
+                         values="0.8;1;0.8"
+                         dur="4s"
+                         repeatCount="indefinite"/>
+            </circle>
+            <text x="280" y="465" font-family="Arial" font-size="14" fill="white" text-anchor="middle">
+                Bash
+                <animate attributeName="font-size"
+                         values="13;15;13"
+                         dur="4s"
+                         begin="3s"
+                         repeatCount="indefinite"/>
+            </text>
+        </g>
     </a>
 
+    <!-- Nu -->
     <a href="https://www.nushell.sh/" target="_blank">
-        <circle cx="360" cy="460" r="30" fill="#0891B2">
-            <animate attributeName="opacity" dur="2s" values="0.8;1;0.8" repeatCount="indefinite" begin="1.4s"/>
-        </circle>
-        <text x="360" y="465" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Nu</text>
+        <g>
+            <use href="#pulseRing" x="360" y="460">
+                <animate attributeName="opacity"
+                         values="0;1;0"
+                         dur="3s"
+                         begin="3.5s"
+                         repeatCount="indefinite"/>
+            </use>
+            <circle cx="360" cy="460" r="30" fill="#0891B2">
+                <animate attributeName="r"
+                         values="28;32;28"
+                         dur="4s"
+                         begin="3.5s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="fill-opacity"
+                         values="0.8;1;0.8"
+                         dur="4s"
+                         repeatCount="indefinite"/>
+            </circle>
+            <text x="360" y="465" font-family="Arial" font-size="14" fill="white" text-anchor="middle">
+                Nu
+                <animate attributeName="font-size"
+                         values="13;15;13"
+                         dur="4s"
+                         begin="3.5s"
+                         repeatCount="indefinite"/>
+            </text>
+        </g>
     </a>
 
-    <!-- Expertise section with gradient background -->
-    <rect x="600" y="170" width="540" height="120" rx="15" fill="url(#sectionGrad)" stroke="#e2e8f0" stroke-width="1"/>
-    <text x="620" y="200" font-family="Arial" font-size="24" fill="#1e293b" font-weight="bold">Ask me about:</text>
-    <text x="620" y="240" font-family="Arial" font-size="18" fill="#475569">• Mobile Development</text>
-    <text x="620" y="270" font-family="Arial" font-size="18" fill="#475569">• Security</text>
+    <!-- Expertise Section with Floating Animation -->
+    <g>
+        <animateTransform attributeName="transform"
+                          type="translate"
+                          values="0,0;3,-3;0,0"
+                          dur="8s"
+                          repeatCount="indefinite"/>
+        <rect x="600" y="170" width="540" height="120" rx="15" fill="#ffffff" opacity="0.9" stroke="#e2e8f0">
+            <animate attributeName="opacity"
+                     values="0.85;0.95;0.85"
+                     dur="8s"
+                     repeatCount="indefinite"/>
+        </rect>
+        <text x="620" y="200" font-family="Arial" font-size="24" fill="#1e293b" font-weight="bold">
+            Ask me about:
+            <animate attributeName="fill-opacity"
+                     values="0.8;1;0.8"
+                     dur="8s"
+                     repeatCount="indefinite"/>
+        </text>
+        <text x="620" y="240" font-family="Arial" font-size="18" fill="#475569">
+            • Mobile Development
+            <animate attributeName="fill-opacity"
+                     values="0.7;1;0.7"
+                     dur="8s"
+                     begin="0.5s"
+                     repeatCount="indefinite"/>
+        </text>
+        <text x="620" y="270" font-family="Arial" font-size="18" fill="#475569">
+            • Security
+            <animate attributeName="fill-opacity"
+                     values="0.7;1;0.7"
+                     dur="8s"
+                     begin="1s"
+                     repeatCount="indefinite"/>
+        </text>
+    </g>
 
-    <!-- Connect section with larger icons -->
-    <text x="620" y="380" font-family="Arial" font-size="24" fill="#1e293b" font-weight="bold">Connect with me</text>
+    <!-- Social Links with Enhanced Animations -->
+    <g>
+        <text x="620" y="380" font-family="Arial" font-size="24" fill="#1e293b" font-weight="bold">
+            Connect with me
+            <animate attributeName="fill-opacity"
+                     values="0.8;1;0.8"
+                     dur="5s"
+                     repeatCount="indefinite"/>
+        </text>
+    </g>
 
-    <!-- Social links with enhanced hover effects -->
+    <!-- GitHub -->
     <a href="https://github.com/EsmaeelNabil" target="_blank">
-        <circle cx="640" cy="430" r="35" fill="#333333">
-            <animate attributeName="r" dur="0.3s" begin="mouseover" to="38" fill="freeze"/>
-            <animate attributeName="r" dur="0.3s" begin="mouseout" to="35" fill="freeze"/>
-        </circle>
-        <text x="640" y="435" font-family="Arial" font-size="16" fill="white" text-anchor="middle">GH</text>
+        <g>
+            <use href="#pulseRing" x="640" y="430">
+                <animate attributeName="opacity"
+                         values="0;0.5;0"
+                         dur="3s"
+                         repeatCount="indefinite"/>
+            </use>
+            <circle cx="640" cy="430" r="35" fill="#333333">
+                <animate attributeName="r"
+                         values="33;37;33"
+                         dur="6s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="fill-opacity"
+                         values="0.8;1;0.8"
+                         dur="6s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="r" dur="0.3s" begin="mouseover" to="40" fill="freeze"/>
+                <animate attributeName="r" dur="0.3s" begin="mouseout" to="35" fill="freeze"/>
+                <animate attributeName="fill" dur="0.3s" begin="mouseover" to="#000000" fill="freeze"/>
+                <animate attributeName="fill" dur="0.3s" begin="mouseout" to="#333333" fill="freeze"/>
+            </circle>
+            <text x="640" y="435" font-family="Arial" font-size="16" fill="white" text-anchor="middle">
+                GH
+                <animate attributeName="font-size"
+                         values="15;17;15"
+                         dur="6s"
+                         repeatCount="indefinite"/>
+            </text>
+        </g>
     </a>
 
+    <!-- LinkedIn -->
     <a href="https://www.linkedin.com/in/esmaeel-moustafa-1813649b/" target="_blank">
-        <circle cx="730" cy="430" r="35" fill="#0A66C2">
-            <animate attributeName="r" dur="0.3s" begin="mouseover" to="38" fill="freeze"/>
-            <animate attributeName="r" dur="0.3s" begin="mouseout" to="35" fill="freeze"/>
-        </circle>
-        <text x="730" y="435" font-family="Arial" font-size="16" fill="white" text-anchor="middle">LI</text>
+        <g>
+            <use href="#pulseRing" x="730" y="430">
+                <animate attributeName="opacity"
+                         values="0;0.5;0"
+                         dur="3s"
+                         begin="0.5s"
+                         repeatCount="indefinite"/>
+            </use>
+            <circle cx="730" cy="430" r="35" fill="#0A66C2">
+                <animate attributeName="r"
+                         values="33;37;33"
+                         dur="6s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="fill-opacity"
+                         values="0.8;1;0.8"
+                         dur="6s"
+                         repeatCount="indefinite"/>
+                <animate attributeName="r" dur="0.3s" begin="mouseover" to="40" fill="freeze"/>
+                <animate attributeName="r" dur="0.3s" begin="mouseout" to="35" fill="freeze"/>
+                <animate attributeName="fill" dur="0.3s" begin="mouseover" to="#0077B5" fill="freeze"/>
+                <animate attributeName="fill" dur="0.3s" begin="mouseout" to="#0A66C2" fill="freeze"/>
+            </circle>
+            <text x="730" y="435" font-family="Arial" font-size="16" fill="white" text-anchor="middle">
+                LI
+                <animate attributeName="font-size"
+                         values="15;17;15"
+                         dur="6s"
+                         begin="0.5s"
+                         repeatCount="indefinite"/>
+            </text>
+        </g>
     </a>
 
-    <!-- Fun facts section -->
-    <rect x="600" y="480" width="540" height="80" rx="15" fill="url(#sectionGrad)" stroke="#e2e8f0" stroke-width="1"/>
-    <text x="620" y="510" font-family="Arial" font-size="18" fill="#1e293b">Fun Facts:</text>
-    <text x="620" y="540" font-family="Arial" font-size="16" fill="#475569">• Night walks 🌙  • Music enthusiast 🎵</text>
+    <!-- Fun Facts Section -->
+    <g>
+        <animateTransform attributeName="transform"
+                          type="translate"
+                          values="0,0;0,-5;0,0"
+                          dur="10s"
+                          repeatCount="indefinite"/>
+        <rect x="600" y="480" width="540" height="80" rx="15" fill="#ffffff" opacity="0.9" stroke="#e2e8f0">
+            <animate attributeName="opacity"
+                     values="0.85;0.95;0.85"
+                     dur="10s"
+                     repeatCount="indefinite"/>
+        </rect>
+        <text x="620" y="510" font-family="Arial" font-size="18" fill="#1e293b">
+            Fun Facts:
+            <animate attributeName="fill-opacity"
+                     values="0.8;1;0.8"
+                     dur="10s"
+                     repeatCount="indefinite"/>
+        </text>
+        <text x="620" y="540" font-family="Arial" font-size="16" fill="#475569">
+            • Night walks 🌙 • Music enthusiast 🎵
+            <animate attributeName="fill-opacity"
+                     values="0.7;1;0.7"
+                     dur="10s"
+                     repeatCount="indefinite"/>
+        </text>
+    </g>
+
 </svg>
