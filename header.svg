@@ -30,13 +30,13 @@
 
     <!-- Header text with gradient background -->
     <rect x="60" y="40" width="600" height="70" rx="15" fill="#1e293b" opacity="0.7"/>
-    <text x="80" y="85" font-family="Arial" font-size="42" fill="white" font-weight="bold">Hi 👋, I'm Esmaeel</text>
-    <text x="80" y="140" font-family="Arial" font-size="26" fill="#60a5fa">Software Engineer @Thermondo</text>
+    <text x="80" y="85" font-family="Arial" font-size="42" fill="white" font-weight="bold">Hi, I'm Esmaeel</text>
+    <text x="80" y="140" font-family="Arial" font-size="26" fill="#60a5fa">Software Engineer</text>
 
     <!-- About section with styled background -->
     <rect x="60" y="170" width="500" height="100" rx="15" fill="#1e293b" opacity="0.7"/>
     <text x="80" y="200" font-family="Arial" font-size="18" fill="#94a3b8">"Aiming to learn everything I can 🎯"</text>
-    <text x="80" y="230" font-family="Arial" font-size="16" fill="#94a3b8">• 2024 Goal: Increase Open Source contributions</text>
+    <text x="80" y="230" font-family="Arial" font-size="16" fill="#94a3b8">• 2025 Goal: Increase Open Source contributions</text>
     <text x="80" y="255" font-family="Arial" font-size="16" fill="#94a3b8">• Always open for collaboration</text>
 
     <!-- Tech stack section with larger circles -->
