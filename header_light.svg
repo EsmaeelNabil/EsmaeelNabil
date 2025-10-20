@@ -136,7 +136,7 @@
                      repeatCount="indefinite"/>
         </rect>
         <text x="80" y="85" font-family="Arial" font-size="42" fill="#1e293b" font-weight="bold">
-            Hi 👋, I'm Esmaeel
+            Hi, I'm Esmaeel
             <animate attributeName="fill-opacity"
                      values="0.8;1;0.8"
                      dur="8s"
@@ -147,7 +147,7 @@
     <!-- Role Title with Complex Shimmer -->
     <g>
         <text x="80" y="140" font-family="Arial" font-size="26" fill="#3b82f6">
-            Software Engineer @Thermondo
+            Software Engineer
             <animate attributeName="fill-opacity"
                      values="0.8;1;0.8"
                      dur="6s"
