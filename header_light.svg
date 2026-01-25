@@ -177,7 +177,7 @@
                      repeatCount="indefinite"/>
         </text>
         <text x="80" y="230" font-family="Arial" font-size="16" fill="#475569">
-            • 2024 Goal: Increase Open Source contributions
+            • 2026 Goal: Increase Open Source contributions
             <animate attributeName="fill-opacity"
                      values="0.7;1;0.7"
                      dur="7s"
