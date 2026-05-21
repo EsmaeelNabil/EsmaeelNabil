@@ -1,132 +1,211 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
-    <!-- Gradient Definitions -->
-    <defs>
-        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
-        </linearGradient>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 650">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060912"/>
+      <stop offset="100%" stop-color="#0c1225"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#b8c8d8"/>
+    </linearGradient>
+    <linearGradient id="divider" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#1e3a5f" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="chipGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="0.7" fill="#1e3a5f" opacity="0.5"/>
+    </pattern>
+    <pattern id="scanlines" x="0" y="0" width="1400" height="4" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="1400" height="1" fill="#000000" opacity="0.08"/>
+    </pattern>
+  </defs>
 
-        <linearGradient id="highlightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
-        </linearGradient>
+  <!-- BACKGROUND -->
+  <rect width="1400" height="650" fill="url(#bg)"/>
+  <rect width="1400" height="650" fill="url(#dots)"/>
+  <rect width="1400" height="650" fill="url(#scanlines)"/>
 
-        <radialGradient id="circleGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-            <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:0.3" />
-            <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:0.1" />
-        </radialGradient>
+  <!-- TERMINAL CHROME BAR -->
+  <rect x="0" y="0" width="1400" height="38" fill="#080c1a"/>
+  <line x1="0" y1="38" x2="1400" y2="38" stroke="#1a2d4a" stroke-width="1"/>
+  <!-- Traffic lights -->
+  <circle cx="22" cy="19" r="6.5" fill="#ff5f57"/>
+  <circle cx="44" cy="19" r="6.5" fill="#ffbd2e"/>
+  <circle cx="66" cy="19" r="6.5" fill="#28c840"/>
+  <!-- Tab -->
+  <rect x="88" y="7" width="210" height="24" rx="4" fill="#0c1225"/>
+  <text x="193" y="23.5" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="11" fill="#3d5473" text-anchor="middle">esmaeel@dev — ~/portfolio</text>
+  <!-- Window controls right -->
+  <text x="1388" y="23" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="12" fill="#1e3a5f" text-anchor="end">— □ ×</text>
 
-        <!-- Tech icon background with gradient -->
-        <radialGradient id="techIconGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-            <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.4" />
-            <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:0.2" />
-        </radialGradient>
-    </defs>
+  <!-- LEFT AMBER ACCENT STRIP -->
+  <rect x="0" y="38" width="4" height="612" fill="url(#amber)" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+  </rect>
 
-    <!-- Background with decoration -->
-    <rect width="1200" height="600" fill="url(#bgGrad)"/>
-    <circle cx="100" cy="100" r="200" fill="url(#circleGrad)" opacity="0.5"/>
-    <circle cx="1100" cy="500" r="200" fill="url(#circleGrad)" opacity="0.5"/>
+  <!-- BACKGROUND DECORATION: large faded bracket -->
+  <text x="560" y="560" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="520" fill="#0d1930" font-weight="bold">}</text>
 
-    <!-- Header text with gradient background -->
-    <rect x="60" y="40" width="600" height="70" rx="15" fill="#1e293b" opacity="0.7"/>
-    <text x="80" y="85" font-family="Arial" font-size="42" fill="white" font-weight="bold">Hi, I'm Esmaeel</text>
-    <text x="80" y="140" font-family="Arial" font-size="26" fill="#60a5fa">Software Engineer</text>
+  <!-- DIAGONAL GEOMETRIC ELEMENT (right) -->
+  <polygon points="1260,38 1400,38 1400,612 1330,612" fill="#07091a" opacity="0.7"/>
+  <line x1="1260" y1="38" x2="1330" y2="612" stroke="#f59e0b" stroke-width="1" opacity="0.15"/>
 
-    <!-- About section with styled background -->
-    <rect x="60" y="170" width="500" height="100" rx="15" fill="#1e293b" opacity="0.7"/>
-    <text x="80" y="200" font-family="Arial" font-size="18" fill="#94a3b8">"Aiming to learn everything I can 🎯"</text>
-    <text x="80" y="230" font-family="Arial" font-size="16" fill="#94a3b8">• 2025 Goal: Increase Open Source contributions</text>
-    <text x="80" y="255" font-family="Arial" font-size="16" fill="#94a3b8">• Always open for collaboration</text>
+  <!-- ========================== LEFT COLUMN ========================== -->
 
-    <!-- Tech stack section with larger circles -->
-    <text x="80" y="320" font-family="Arial" font-size="24" fill="white" font-weight="bold">Tech Stack</text>
+  <!-- ESMAEEL -->
+  <text x="26" y="168" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="90" fill="url(#nameGrad)" font-weight="bold" letter-spacing="-2">
+    ESMAEEL
+    <animate attributeName="opacity" values="0;0;1" dur="1s" fill="freeze"/>
+  </text>
 
-    <!-- Tech icons with larger circles and gradients -->
-    <a href="https://kotlinlang.org/" target="_blank">
-        <circle cx="120" cy="380" r="30" fill="url(#techIconGrad)">
-            <animate attributeName="opacity" dur="2s" values="0.6;1;0.6" repeatCount="indefinite"/>
-        </circle>
-        <text x="120" y="385" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Kotlin</text>
-    </a>
+  <!-- NABIL. -->
+  <text x="26" y="260" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="90" fill="#f59e0b" font-weight="bold" letter-spacing="-2" filter="url(#glow)">
+    NABIL.
+    <animate attributeName="opacity" values="0;0;0;1" dur="1.4s" fill="freeze"/>
+  </text>
 
-    <a href="https://www.java.com/" target="_blank">
-        <circle cx="200" cy="380" r="30" fill="url(#techIconGrad)">
-            <animate attributeName="opacity" dur="2s" values="0.6;1;0.6" repeatCount="indefinite" begin="0.2s"/>
-        </circle>
-        <text x="200" y="385" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Java</text>
-    </a>
+  <!-- blinking cursor -->
+  <rect x="348" y="193" width="11" height="72" fill="#f59e0b" rx="1">
+    <animate attributeName="opacity" values="0;0;0;1;1;0;1;0;1" dur="1.8s" repeatCount="indefinite"/>
+  </rect>
 
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-        <circle cx="280" cy="380" r="30" fill="url(#techIconGrad)">
-            <animate attributeName="opacity" dur="2s" values="0.6;1;0.6" repeatCount="indefinite" begin="0.4s"/>
-        </circle>
-        <text x="280" y="385" font-family="Arial" font-size="14" fill="white" text-anchor="middle">JS</text>
-    </a>
+  <!-- ROLE -->
+  <text x="28" y="304" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="17" fill="#4a6080" letter-spacing="5">SOFTWARE ENGINEER</text>
 
-    <a href="https://www.typescriptlang.org/" target="_blank">
-        <circle cx="360" cy="380" r="30" fill="url(#techIconGrad)">
-            <animate attributeName="opacity" dur="2s" values="0.6;1;0.6" repeatCount="indefinite" begin="0.6s"/>
-        </circle>
-        <text x="360" y="385" font-family="Arial" font-size="14" fill="white" text-anchor="middle">TS</text>
-    </a>
+  <!-- Accent underline -->
+  <rect x="28" y="314" width="340" height="1.5" fill="url(#amber)" opacity="0.7"/>
 
-    <a href="https://www.rust-lang.org/" target="_blank">
-        <circle cx="120" cy="460" r="30" fill="url(#techIconGrad)">
-            <animate attributeName="opacity" dur="2s" values="0.6;1;0.6" repeatCount="indefinite" begin="0.8s"/>
-        </circle>
-        <text x="120" y="465" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Rust</text>
-    </a>
+  <!-- TERMINAL PROMPT LINES -->
+  <!-- Prompt 1 -->
+  <text x="28" y="358" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="15" fill="#22c55e" font-weight="bold">❯</text>
+  <text x="50" y="358" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="15" fill="#e2e8f0">"Aiming to learn everything I can 🎯"</text>
 
-    <a href="https://www.python.org/" target="_blank">
-        <circle cx="200" cy="460" r="30" fill="url(#techIconGrad)">
-            <animate attributeName="opacity" dur="2s" values="0.6;1;0.6" repeatCount="indefinite" begin="1s"/>
-        </circle>
-        <text x="200" y="465" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Python</text>
-    </a>
+  <!-- Prompt 2 -->
+  <text x="28" y="392" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="15" fill="#22c55e" font-weight="bold">❯</text>
+  <text x="50" y="392" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="15" fill="#4a6080">2026: More open source contributions ↑</text>
 
-    <a href="https://www.gnu.org/software/bash/" target="_blank">
-        <circle cx="280" cy="460" r="30" fill="url(#techIconGrad)">
-            <animate attributeName="opacity" dur="2s" values="0.6;1;0.6" repeatCount="indefinite" begin="1.2s"/>
-        </circle>
-        <text x="280" y="465" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Bash</text>
-    </a>
+  <!-- Prompt 3 -->
+  <text x="28" y="426" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="15" fill="#22c55e" font-weight="bold">❯</text>
+  <text x="50" y="426" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="15" fill="#4a6080">Always open for collaboration</text>
 
-    <a href="https://www.nushell.sh/" target="_blank">
-        <circle cx="360" cy="460" r="30" fill="url(#techIconGrad)">
-            <animate attributeName="opacity" dur="2s" values="0.6;1;0.6" repeatCount="indefinite" begin="1.4s"/>
-        </circle>
-        <text x="360" y="465" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Nu</text>
-    </a>
+  <!-- VERTICAL DIVIDER -->
+  <line x1="680" y1="50" x2="680" y2="608" stroke="url(#divider)" stroke-width="1" stroke-dasharray="5,7"/>
 
-    <!-- Expertise section with gradient background -->
-    <rect x="600" y="170" width="540" height="120" rx="15" fill="#1e293b" opacity="0.7"/>
-    <text x="620" y="200" font-family="Arial" font-size="24" fill="white" font-weight="bold">Ask me about:</text>
-    <text x="620" y="240" font-family="Arial" font-size="18" fill="#94a3b8">• Mobile Development</text>
-    <text x="620" y="270" font-family="Arial" font-size="18" fill="#94a3b8">• Security</text>
+  <!-- ========================== RIGHT COLUMN ========================== -->
 
-    <!-- Connect section with larger icons -->
-    <text x="620" y="380" font-family="Arial" font-size="24" fill="white" font-weight="bold">Connect with me</text>
+  <!-- SECTION: TECH STACK -->
+  <text x="710" y="76" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="10" fill="#f59e0b" letter-spacing="5">TECH STACK</text>
+  <line x1="710" y1="83" x2="1240" y2="83" stroke="#1a2d4a" stroke-width="1"/>
 
-    <!-- Social links with enhanced hover effects -->
-    <a href="https://github.com/EsmaeelNabil" target="_blank">
-        <circle cx="640" cy="430" r="35" fill="url(#techIconGrad)">
-            <animate attributeName="r" dur="0.3s" begin="mouseover" to="38" fill="freeze"/>
-            <animate attributeName="r" dur="0.3s" begin="mouseout" to="35" fill="freeze"/>
-        </circle>
-        <text x="640" y="435" font-family="Arial" font-size="16" fill="white" text-anchor="middle">GH</text>
-    </a>
+  <!-- ROW 1 chips -->
+  <!-- Kotlin -->
+  <rect x="710" y="95" width="112" height="34" rx="3" fill="#080418"/>
+  <rect x="710" y="95" width="112" height="34" rx="3" fill="none" stroke="#7C4DFF" stroke-width="1" opacity="0.9"/>
+  <text x="766" y="118" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="13" fill="#a78bfa" text-anchor="middle" font-weight="bold">Kotlin</text>
 
-    <a href="https://www.linkedin.com/in/esmaeel-moustafa-1813649b/" target="_blank">
-        <circle cx="730" cy="430" r="35" fill="url(#techIconGrad)">
-            <animate attributeName="r" dur="0.3s" begin="mouseover" to="38" fill="freeze"/>
-            <animate attributeName="r" dur="0.3s" begin="mouseout" to="35" fill="freeze"/>
-        </circle>
-        <text x="730" y="435" font-family="Arial" font-size="16" fill="white" text-anchor="middle">LI</text>
-    </a>
+  <!-- Java -->
+  <rect x="836" y="95" width="98" height="34" rx="3" fill="#0e0600"/>
+  <rect x="836" y="95" width="98" height="34" rx="3" fill="none" stroke="#EA8B00" stroke-width="1" opacity="0.9"/>
+  <text x="885" y="118" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="13" fill="#fb923c" text-anchor="middle" font-weight="bold">Java</text>
 
-    <!-- Fun facts section -->
-    <rect x="600" y="480" width="540" height="80" rx="15" fill="#1e293b" opacity="0.7"/>
-    <text x="620" y="510" font-family="Arial" font-size="18" fill="white">Fun Facts:</text>
-    <text x="620" y="540" font-family="Arial" font-size="16" fill="#94a3b8">• Night walks 🌙  • Music enthusiast 🎵</text>
+  <!-- JS -->
+  <rect x="948" y="95" width="76" height="34" rx="3" fill="#0e0c00"/>
+  <rect x="948" y="95" width="76" height="34" rx="3" fill="none" stroke="#F7DF1E" stroke-width="1" opacity="0.9"/>
+  <text x="986" y="118" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="13" fill="#fde047" text-anchor="middle" font-weight="bold">JS</text>
+
+  <!-- TypeScript -->
+  <rect x="1038" y="95" width="136" height="34" rx="3" fill="#000a1c"/>
+  <rect x="1038" y="95" width="136" height="34" rx="3" fill="none" stroke="#3178C6" stroke-width="1" opacity="0.9"/>
+  <text x="1106" y="118" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="13" fill="#60a5fa" text-anchor="middle" font-weight="bold">TypeScript</text>
+
+  <!-- ROW 2 chips -->
+  <!-- Rust -->
+  <rect x="710" y="143" width="98" height="34" rx="3" fill="#0e0200"/>
+  <rect x="710" y="143" width="98" height="34" rx="3" fill="none" stroke="#CE422B" stroke-width="1" opacity="0.9"/>
+  <text x="759" y="166" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="13" fill="#f87171" text-anchor="middle" font-weight="bold">Rust</text>
+
+  <!-- Python -->
+  <rect x="822" y="143" width="112" height="34" rx="3" fill="#000d1c"/>
+  <rect x="822" y="143" width="112" height="34" rx="3" fill="none" stroke="#3776AB" stroke-width="1" opacity="0.9"/>
+  <text x="878" y="166" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="13" fill="#60a5fa" text-anchor="middle" font-weight="bold">Python</text>
+
+  <!-- Bash -->
+  <rect x="948" y="143" width="98" height="34" rx="3" fill="#001400"/>
+  <rect x="948" y="143" width="98" height="34" rx="3" fill="none" stroke="#4EAA25" stroke-width="1" opacity="0.9"/>
+  <text x="997" y="166" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="13" fill="#4ade80" text-anchor="middle" font-weight="bold">Bash</text>
+
+  <!-- Nu -->
+  <rect x="1060" y="143" width="76" height="34" rx="3" fill="#001414"/>
+  <rect x="1060" y="143" width="76" height="34" rx="3" fill="none" stroke="#3E999F" stroke-width="1" opacity="0.9"/>
+  <text x="1098" y="166" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="13" fill="#22d3ee" text-anchor="middle" font-weight="bold">Nu</text>
+
+  <!-- SECTION: ASK ME ABOUT -->
+  <text x="710" y="230" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="10" fill="#f59e0b" letter-spacing="5">ASK ME ABOUT</text>
+  <line x1="710" y1="237" x2="1240" y2="237" stroke="#1a2d4a" stroke-width="1"/>
+
+  <!-- Pill: Mobile Dev -->
+  <rect x="710" y="250" width="196" height="38" rx="19" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <text x="808" y="274" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="14" fill="#f59e0b" text-anchor="middle">📱 Mobile Dev</text>
+
+  <!-- Pill: Security -->
+  <rect x="920" y="250" width="156" height="38" rx="19" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" begin="1.2s" repeatCount="indefinite"/>
+  </rect>
+  <text x="998" y="274" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="14" fill="#f59e0b" text-anchor="middle">🔐 Security</text>
+
+  <!-- SECTION: CONNECT -->
+  <text x="710" y="342" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="10" fill="#f59e0b" letter-spacing="5">CONNECT</text>
+  <line x1="710" y1="349" x2="1240" y2="349" stroke="#1a2d4a" stroke-width="1"/>
+
+  <!-- GitHub button -->
+  <a href="https://github.com/EsmaeelNabil" target="_blank">
+    <rect x="710" y="362" width="150" height="40" rx="4" fill="#0d1117"/>
+    <rect x="710" y="362" width="150" height="40" rx="4" fill="none" stroke="#30363d" stroke-width="1">
+      <animate attributeName="stroke" values="#30363d;#f59e0b;#30363d" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <text x="785" y="387" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="13" fill="#c9d1d9" text-anchor="middle">⊛  GitHub</text>
+  </a>
+
+  <!-- LinkedIn button -->
+  <a href="https://www.linkedin.com/in/esmaeel-moustafa-1813649b/" target="_blank">
+    <rect x="876" y="362" width="160" height="40" rx="4" fill="#001832"/>
+    <rect x="876" y="362" width="160" height="40" rx="4" fill="none" stroke="#0A66C2" stroke-width="1">
+      <animate attributeName="stroke" values="#0A66C2;#60a5fa;#0A66C2" dur="4s" begin="2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="956" y="387" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="13" fill="#4da3ff" text-anchor="middle">in  LinkedIn</text>
+  </a>
+
+  <!-- SECTION: OFF DUTY -->
+  <text x="710" y="460" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="10" fill="#2d3d52" letter-spacing="5">OFF DUTY</text>
+  <line x1="710" y1="467" x2="1240" y2="467" stroke="#131e2e" stroke-width="1"/>
+  <text x="710" y="497" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="14" fill="#2d3d52">🌙  Night walks   ·   🎵  Music enthusiast</text>
+
+  <!-- ========================== STATUS BAR ========================== -->
+  <rect x="0" y="614" width="1400" height="36" fill="#07091a"/>
+  <line x1="0" y1="614" x2="1400" y2="614" stroke="#1a2d4a" stroke-width="1"/>
+
+  <!-- Pulse indicator -->
+  <circle cx="18" cy="632" r="4.5" fill="#22c55e">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="30" y="636" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="11" fill="#2d4a30">OPEN TO COLLABORATE</text>
+
+  <text x="700" y="636" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="11" fill="#2d3d52" text-anchor="middle">github.com/EsmaeelNabil</text>
+
+  <text x="1390" y="636" font-family="'SF Mono','Fira Code','Cascadia Code','Courier New',monospace" font-size="11" fill="#2d3d52" text-anchor="end">2026</text>
 </svg>
